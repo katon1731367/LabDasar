@@ -1,0 +1,388 @@
+/* global style */
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap");
+
+* {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-family: "Montserrat", sans-serif;
+}
+
+body {
+	background: #e1ecf2;
+}
+/* global style */
+
+/* user-page */
+
+/* user-page */
+
+/* form input */
+.user-input-wrp {
+	position: relative;
+	width: 50%;
+}
+.user-input-wrp .inputText {
+	width: 100%;
+	outline: none;
+	border: none;
+	border-bottom: 1px solid #777;
+	box-shadow: none !important;
+	border: none;
+	background: none;
+	outline: none;
+	padding: 0 0.7rem;
+	margin-bottom: -5px;
+	font-size: 1.2rem;
+	color: #555;
+}
+.user-input-wrp .inputText:focus {
+	border-color: blue;
+	border-width: medium medium 2px;
+}
+.user-input-wrp .floating-label {
+	position: absolute;
+	pointer-events: none;
+	top: 18px;
+	left: 10px;
+	transition: 0.2s ease all;
+}
+.user-input-wrp input:focus ~ .floating-label,
+.user-input-wrp input:not(:focus):valid ~ .floating-label {
+	top: 5px;
+	left: 10px;
+	font-size: 15px;
+	opacity: 1;
+	color: cornflowerblue;
+	font-weight: 700;
+}
+/* form input */
+
+/* login-page */
+
+.wave {
+	position: fixed;
+	height: 100%;
+	left: 0;
+	bottom: 0;
+	z-index: -1;
+}
+
+.login-container {
+	width: 100vw;
+	height: 100vh;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-gap: 10rem;
+	margin-left: 20px;
+}
+
+.login-container .content {
+	display: flex;
+	align-items: center;
+	text-align: center;
+}
+
+.img {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.img img {
+	width: 500px;
+}
+
+.avatar {
+	width: 100px;
+}
+
+form h2 {
+	font-size: 2.9rem;
+	text-transform: uppercase;
+	margin: 15px 0;
+	color: #333;
+}
+
+.input-div {
+	position: relative;
+	display: grid;
+	grid-template-columns: 7% 93%;
+	margin: 25px 0;
+	padding: 5px 0;
+	border-bottom: 2px solid #2e4ead;
+}
+
+.input-div::before,
+.input-div:after {
+	content: "";
+	position: absolute;
+	bottom: -2px;
+	width: 0;
+	height: 2px;
+	background-color: #0819ff;
+}
+
+.input-div::after {
+	right: 50%;
+}
+
+.input-div::before {
+	left: 50%;
+}
+
+.input-div.focus::before,
+.input-div.focus::after {
+	width: 50%;
+}
+
+.input-div.focus .icon-login i {
+	color: #2e4ead;
+}
+
+.input-div {
+	margin-top: 0;
+}
+
+.input-div:last-child {
+	margin-bottom: 4px;
+}
+
+.icon-login {
+	margin-top: 18px;
+	font-size: 25px;
+	display: flex;
+	justify-content: center;
+	/* align-items: center; */
+}
+
+.icon-login i {
+	color: #999;
+}
+
+.input-div > div {
+	position: relative;
+	height: 45px;
+}
+.input-div .input {
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	border: none;
+	background: none;
+	outline: none;
+	padding: 0 0.7rem;
+	font-size: 1.2rem;
+	color: #555;
+}
+
+a {
+	display: block;
+}
+
+a.forgot-pass {
+	text-align: right;
+	color: #999;
+	font-size: 0.9rem;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	transition: 0.3s;
+}
+
+a.register {
+	text-align: center;
+	color: #333;
+	font-size: 0.9rem;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	transition: 0.3s;
+}
+
+a.register:hover {
+	color: #000;
+}
+
+a.forgot-pass:hover {
+	color: #2e4ead;
+}
+
+.btn-gradient {
+	display: block;
+	width: 100%;
+	height: 50px;
+	border-radius: 25px;
+	margin: 1rem 0 px;
+	font-size: 1.2rem;
+	outline: none;
+	border: none;
+	background-image: linear-gradient(to right, #a4b4e2, #a0acd1, #1f4cdf);
+	cursor: pointer;
+	color: #fff;
+	text-transform: uppercase;
+	background-size: 200%;
+	transition: 0.5s;
+}
+
+.btn-gradient:hover {
+	background-position: right;
+	color: #fff;
+}
+
+@media screen and (max-width: 1050px) {
+	.login-container {
+		grid-gap: 5rem;
+	}
+}
+
+@media screen and (max-width: 1030px) {
+	.form {
+		width: 290px;
+	}
+
+	.form h2 {
+		font-size: 2.4rem;
+		margin: 8px 0;
+	}
+
+	.img img {
+		width: 350px;
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.img {
+		display: none;
+	}
+
+	.login-container {
+		grid-template-columns: none;
+	}
+
+	.content {
+		justify-content: center;
+	}
+
+	.wave {
+		display: none;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.form {
+		width: 200px;
+	}
+
+	.form h2 {
+		font-size: 2rem;
+		margin: 10px 0;
+	}
+}
+
+/* login-page */
+
+/* registration-page */
+
+.user.center {
+	margin: auto;
+}
+
+/* registration-page */
+
+/* Style the tab */
+.tab {
+	overflow: hidden;
+	border: 1px solid #ccc;
+	background-color: #f1f1f1;
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+	background-color: inherit;
+	float: left;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	padding: 14px 16px;
+	transition: 0.3s;
+}
+
+/* Change background color of buttons on hover */
+.tab button:hover {
+	background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+.tab button.active {
+	background-color: #ccc;
+}
+
+/* Style the tab content */
+.tabcontent {
+	display: none;
+	padding: 6px 12px;
+	border: 1px solid #ccc;
+	border-top: none;
+}
+
+.nav-tabs .nav-item {
+	cursor: pointer;
+}
+
+.drop-zone {
+    max-width: inherit;
+    height: 200px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: "Quicksand", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    cursor: pointer;
+    color: #cccccc;
+    border: 4px dashed #a0acd1;
+    border-radius: 10px;
+  }
+  
+  .drop-zone--over {
+    border-style: solid;
+  }
+  
+  .drop-zone__input {
+    display: none;
+  }
+  
+  .drop-zone__thumb {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #cccccc;
+    background-size: cover;
+    position: relative;
+  }
+  
+  .drop-zone__thumb::after {
+    content: attr(data-label);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 5px 0;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 14px;
+    text-align: center;
+  }
+
+
+  /* Kontrak tempat duduk */
+
+  
+
+  /* Kontrak tempat duduk */
+  
