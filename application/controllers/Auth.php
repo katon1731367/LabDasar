@@ -163,6 +163,6 @@ class Auth extends CI_Controller
     public function blocked()
     {
         $data['title'] = 'Page Blocked';
-        $this->load->view('auth/blocked');
+        $this->load->view('auth/blocked', $data);
     }
 }

@@ -10,22 +10,16 @@
   <meta name="author" content="">
 
   <title><?= $title ?></title>
-
-  <!-- Custom fonts for this template-->
-  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
-
   <!-- Custom fonts for this template-->
   <link href="<?= base_url('assets/') ?>vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
-    <!-- Custom styles for this template-->
-    <link href="<?= base_url('assets/') ?>css/sb-admin-2.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="<?= base_url('assets/')?>css/style1.css?<?=date('l jS \of F Y h:i:s A');?>">
+  <!-- Custom styles for this template-->
+  <link href="<?= base_url('assets/') ?>css/sb-admin-2.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="<?= base_url('assets/')?>css/style1.css?<?=date('l jS \of F Y h:i:s A');?>">
 
 </head>
 
-<body id="page-top">
+<body style="background:#f8f9fc">
 
   <!-- Page Wrapper -->
   <div id="wrapper">
@@ -34,7 +28,7 @@
     <div id="content-wrapper" class="d-flex flex-column">
 
       <!-- Main Content -->
-      <div id="content">
+      <div id="content" style="margin-top:25vh">
 
         <!-- Begin Page Content -->
         <div class="container-fluid">

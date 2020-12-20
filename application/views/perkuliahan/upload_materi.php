@@ -4,38 +4,42 @@
       <!-- Page Heading -->
       <h1 class="h3 mb-4 text-gray-800"><?= $title ?></h1>
 
-      <?= $this->session->flashdata('message') ?>
+      <div class="card">
+        <div class="card-body">
+        <?= $this->session->flashdata('message') ?>
 
-      <!-- Button trigger modal -->
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" style="margin-bottom: 10px;">Tambahkan Materi</button>
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg" style="margin-bottom: 10px;">Tambahkan Materi</button>
 
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">ID Perkuliahan</th>
-            <th scope="col">Nama Kelas</th>
-            <th scope="col">Nama File</th>
-            <th scope="col">Action</th>
-          </tr>
-        </thead>
-        <tbody>
-
-          <?php $i = 1 ?>
-          <?php foreach ($materi as $m) : ?>
+        <table class="table table-hover">
+          <thead>
             <tr>
-              <th scope="row"><?= $i ?></th>
-              <td><?= $m['id_perkuliahan'] ?></td>
-              <td><?= $m['kelas'] ?></td>
-              <td><?= $m['nama_materi'] ?></td>
-              <td>
-                <a href="<?= base_url(); ?>perkuliahan/deleteMateri/<?= $m['id_materi'] ?>/<?= $m['nama_materi'] ?>/<?= $m['id_perkuliahan'] ?>" class="badge badge-danger" onclick="return confirm('Deleting <?= $m['nama_materi'] ?> ?')">delete</a>
-              </td>
+              <th scope="col">#</th>
+              <th scope="col">ID Perkuliahan</th>
+              <th scope="col">Nama Kelas</th>
+              <th scope="col">Nama File</th>
+              <th scope="col">Action</th>
             </tr>
-          <?php $i++;
-          endforeach; ?>
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+
+            <?php $i = 1 ?>
+            <?php foreach ($materi as $m) : ?>
+              <tr>
+                <th scope="row"><?= $i ?></th>
+                <td><?= $m['id_perkuliahan'] ?></td>
+                <td><?= $m['kelas'] ?></td>
+                <td><?= $m['nama_materi'] ?></td>
+                <td>
+                  <a href="<?= base_url(); ?>perkuliahan/deleteMateri/<?= $m['id_materi'] ?>/<?= $m['nama_materi'] ?>/<?= $m['id_perkuliahan'] ?>" class="badge badge-danger" onclick="return confirm('Deleting <?= $m['nama_materi'] ?> ?')">delete</a>
+                </td>
+              </tr>
+            <?php $i++;
+            endforeach; ?>
+          </tbody>
+        </table>
+        </div>
+      </div>
 
       <!-- Modal New Modal-->
       <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">

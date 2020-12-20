@@ -26,9 +26,9 @@
                         <span class="floating-label">Password</span>
                     </div>
                 </div>
-                <a href="<?= base_url() ?>Auth/forgotpass" class="forgot-pass">Forgot Password</a>
+                <a href="<?= base_url("auth/forgotpass") ?>" class="forgot-pass">Forgot Password</a>
                 <input type="submit" class="btn-gradient" value="login">
-                <a href="<?= base_url() ?>Auth/registration" class="register">Create an Account!</a>
+                <a href="<?= base_url("auth/registration") ?>" class="register">Create an Account!</a>
             </form>
         </div>
     </div>

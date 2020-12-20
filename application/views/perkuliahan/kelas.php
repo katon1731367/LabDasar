@@ -7,52 +7,56 @@
        <div class="row">
           <div class="col">
 
-             <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>') ?>
+             <div class="card">
+               <div class="card-body">
+               <?= form_error('menu', '<div class="alert alert-danger" role="alert">', '</div>') ?>
 
-             <?= $this->session->flashdata('message') ?>
+               <?= $this->session->flashdata('message') ?>
 
-             <!-- Button trigger modal -->
-             <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#tambahKelasModal">Tambah Kelas</a>
+               <!-- Button trigger modal -->
+               <a href="" class="btn btn-primary mb-3" data-toggle="modal" data-target="#tambahKelasModal">Tambah Kelas</a>
 
 
-             <table class="table table-hover">
-                <thead>
-                   <tr>
-                      <th rowspan="2" class="align-middle">#</th>
-                      <th rowspan="2" class="align-middle">Id Perkuliahan</th>
-                      <th rowspan="2" class="align-middle">Nama Matakuliah</th>
-                      <th rowspan="2" class="align-middle">Nama Dosen</th>
-                      <th rowspan="2" class="align-middle">Hari</th>
-                      <th colspan="2" class="text-center">Jam</th>
-                      <th rowspan="2" class="align-middle text-center">Jumlah Mahasiswa</th>
-                      <th rowspan="2" class="align-middle">Action</th>
-                   </tr>
-                   <tr>
-                      <th class="text-center">Jam Mulai</th>
-                      <th class="text-center">Jam Akhir</th>
-                   </tr>
-                </thead>
-                <tbody>
-                   <?php $i = 1 ?>
-                   <?php foreach ($kelas as $k) : ?>
-                      <tr>
-                         <th scope="row"><?= $i ?></th>
-                         <td><?= $k['id_perkuliahan'] ?></td>
-                         <td><?= $k['nama_matkul'] ?></td>
-                         <td><?= $k['nama_dosen'] ?></td>
-                         <td><?= $k['hari'] ?></td>
-                         <td class="text-center"><?= $k['jam_mulai'] ?></td>
-                         <td class="text-center"><?= $k['jam_akhir'] ?></td>
-                         <td class="text-center"><?= $k['jumlah_mahasiswa'] ?></td>
-                         <td>
-                            <a href="<?= base_url(); ?>perkuliahan/deletekelas/<?= $k['id_perkuliahan'] ?>" class="badge badge-danger" onclick="return confirm('Deleting <?= $k['id_perkuliahan'] ?> ?')">delete</a>
-                            <a href="<?= base_url(); ?>perkuliahan/exportkelas/<?= $k['id_perkuliahan'] ?>" class="badge badge-success" onclick="return confirm('export <?= $k['id_perkuliahan'] ?> ?')">export</a>
-                         </td>
-                      </tr>
-                   <?php $i++;
+               <table class="table table-hover">
+                  <thead>
+                     <tr>
+                        <th rowspan="2" class="align-middle">#</th>
+                        <th rowspan="2" class="align-middle">Id Perkuliahan</th>
+                        <th rowspan="2" class="align-middle">Nama Matakuliah</th>
+                        <th rowspan="2" class="align-middle">Nama Dosen</th>
+                        <th rowspan="2" class="align-middle">Hari</th>
+                        <th colspan="2" class="text-center">Jam</th>
+                        <th rowspan="2" class="align-middle text-center">Jumlah Mahasiswa</th>
+                        <th rowspan="2" class="align-middle">Action</th>
+                     </tr>
+                     <tr>
+                        <th class="text-center">Jam Mulai</th>
+                        <th class="text-center">Jam Akhir</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <?php $i = 1 ?>
+                     <?php foreach ($kelas as $k) : ?>
+                        <tr>
+                           <th scope="row"><?= $i ?></th>
+                           <td><?= $k['id_perkuliahan'] ?></td>
+                           <td><?= $k['nama_matkul'] ?></td>
+                           <td><?= $k['nama_dosen'] ?></td>
+                           <td><?= $k['hari'] ?></td>
+                           <td class="text-center"><?= $k['jam_mulai'] ?></td>
+                           <td class="text-center"><?= $k['jam_akhir'] ?></td>
+                           <td class="text-center"><?= $k['jumlah_mahasiswa'] ?></td>
+                           <td>
+                              <a href="<?= base_url(); ?>perkuliahan/deletekelas/<?= $k['id_perkuliahan'] ?>" class="badge badge-danger" onclick="return confirm('Deleting <?= $k['id_perkuliahan'] ?> ?')">delete</a>
+                              <a href="<?= base_url(); ?>perkuliahan/exportkelas/<?= $k['id_perkuliahan'] ?>" class="badge badge-success" onclick="return confirm('export <?= $k['id_perkuliahan'] ?> ?')">export</a>
+                           </td>
+                        </tr>
+                     <?php $i++;
                      endforeach; ?>
-                </tbody>
-             </table>
+                  </tbody>
+               </table>
+                </div>
+             </div>
           </div>
        </div>
 
