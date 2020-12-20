@@ -33,6 +33,12 @@ class Admin_model extends CI_Model
         return $this->db->delete('barang_hilang');
     }
 
+    public function deleteInfoLab($id)
+    {
+        $this->db->where('id_info', $id);
+        return $this->db->delete('info_lab');
+    }
+
     public function updatePassUser($id)
     {
         $data= [

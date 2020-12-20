@@ -77,6 +77,14 @@ class Admin extends CI_Controller
         redirect('admin');
     }
 
+    public function deleteInfoLab($id)
+    {
+        $this->admin->deleteInfoLab($id);
+
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Congratulation! your request has been deleted</div>');
+        redirect('admin');
+    }
+
     public function accRecoverPass($id)
     {
         $this->admin->updatePassUser($id);

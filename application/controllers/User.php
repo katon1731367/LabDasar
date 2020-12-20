@@ -234,7 +234,7 @@ class User extends CI_Controller
                 } else {
                     $error = array('error' => $this->upload->display_errors());
 
-                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert"> Upload failed  </div>');
+                    $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">' . $error['error'] . '</div>');
                     redirect('user/uploadtugas');
                 }
             } else if (!$this->upload->do_upload('userfile')) {
