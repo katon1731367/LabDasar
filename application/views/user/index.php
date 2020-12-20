@@ -59,6 +59,40 @@
             </div>
         </div>
 
+        <!-- Request Password -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card shadow mb-4">
+                    <div class="card-header py-3">
+                        <h6 class="m-0 font-weight-bold text-primary">Request Password</h6>
+                    </div>
+                    <div class="card-body">
+                        <?php if (empty($passRecover)) { ?>
+                            <p>Tidak ada Permintaan Ganti Password</p>
+                        <?php } else { ?>
+                            <table class="table table-hover">
+                                <thead>
+                                    <th>no</th>
+                                    <th>NIM</th>
+                                    <th>Nama</th>
+                                    <th>Action</th>
+                                </thead>
+                                <?php foreach ($passRecover as $i => $r) : ?>
+                                    <tbody>
+                                        <td><?= ++$i ?></td>
+                                        <td><?= $r['nim'] ?></td>
+                                        <td><?= $r['name'] ?></td>
+                                        <td><a class="badge badge-success" href="<?= base_url('admin/accRecoverPass/') . $r['nim'] ?>" onclick="return confirm('recover pass for <?= $r['name'] ?> ?')">Recover</a></td>
+                                    </tbody>
+                            <?php endforeach;
+                            } ?>
+                            </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Barang hilang -->
         <div class="row">
             <div class="col-md-6">
                 <div class="card shadow mb-4">
@@ -66,6 +100,9 @@
                         <h6 class="m-0 font-weight-bold text-primary">Barang Hilang</h6>
                     </div>
                     <div class="card-body">
+                    <?php if (empty($barang)) { ?>
+                            <p>Tidak ada barang hilang</p>
+                        <?php } else { ?>
                         <table class="table table-hover">
                             <thead>
                                 <th>no</th>
@@ -82,7 +119,7 @@
                                     <td><?= $b['ditemukan_oleh'] ?></td>
                                     <td><?= $b['no_pc'] ?></td>
                                 </tbody>
-                            <?php endforeach; ?>
+                            <?php endforeach; }?>
                         </table>
                     </div>
                 </div>
@@ -93,6 +130,9 @@
                         <h6 class="m-0 font-weight-bold text-primary">INFO LAB</h6>
                     </div>
                     <div class="card-body">
+                    <?php if (empty($info)) { ?>
+                            <p>Tidak ada info saat ini</p>
+                        <?php } else { ?>
                         <table class="table table-hover">
                             <thead>
                                 <th>no</th>
@@ -103,26 +143,25 @@
                                     <td><?= ++$i ?></td>
                                     <td><?= ++$in['keterangan'] ?></td>
                                 </tbody>
-                            <?php endforeach; ?>
+                            <?php endforeach; }?>
                         </table>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-        <!-- /.container-fluid -->
+    <!-- /.container-fluid -->
 
     </div>
     <!-- End of Main Content -->
 
     <!-- modalDowndload-->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal fade" id="modalDownload" tabindex="-1" role="dialog" aria-labelledby="modalDownloadTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content" id="modal-download">
             </div>
         </div>
     </div>
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript">
@@ -164,6 +203,5 @@
                 .done(function(data) {
                     $('#modal-download').html(data);
                 });
-            console.log(kelas);
         });
     </script>
