@@ -2,6 +2,9 @@
 
 local web untuk pembelajaran dan praktikum di Labolatorium Web Dasar
 
+## Requirement
+- Xampp versi terbaru
+
 ## Instalasi
 - Masuk ke folder `Xampp/htdocs/`
 - Clone repository nya, jalankan perintah `git clone https://github.com/katon1731367/LabDasar.git` di git bash atau cmd
